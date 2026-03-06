@@ -3,8 +3,30 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+// সব প্রয়োজনীয় আইকন ইমপোর্ট করুন
+import { 
+  Baby, 
+  HeartPulse, 
+  Activity, 
+  Accessibility, 
+  Home, 
+  UserCheck 
+} from "lucide-react";
+
+// ১. আইকন ম্যাপার অবজেক্ট তৈরি করুন
+const iconMap = {
+  Baby: Baby,
+  HeartPulse: HeartPulse,
+  Activity: Activity,
+  Accessibility: Accessibility,
+  Home: Home,
+  UserCheck: UserCheck,
+};
 
 export default function ServiceCard({ service, index }) {
+  // ২. JSON থেকে আসা স্ট্রিং অনুযায়ী আইকন কম্পোনেন্টটি বের করুন
+  const SelectedIcon = iconMap[service.icon] || Activity; // কিছু না থাকলে ডিফল্ট Activity
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -23,9 +45,9 @@ export default function ServiceCard({ service, index }) {
           className="object-cover group-hover:scale-110 transition-transform duration-500"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
         />
-        {/* Icon Overlay */}
+        {/* Icon Overlay - ৩. এখানে SelectedIcon ব্যবহার করুন */}
         <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-2.5 rounded-2xl shadow-sm text-teal-600">
-          <service.Icon size={24} />
+          <SelectedIcon size={24} />
         </div>
       </div>
 
@@ -45,7 +67,7 @@ export default function ServiceCard({ service, index }) {
             <span className="text-xl font-black text-slate-900">৳{service.price}</span>
           </div>
           <Link
-            href={`/service/${service.id}`}
+            href={`/services/${service.id}`}
             className="px-5 py-2.5 bg-teal-600 text-white text-xs font-bold rounded-xl hover:bg-slate-900 transition-all shadow-md shadow-teal-100 active:scale-95"
           >
             Details

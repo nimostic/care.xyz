@@ -3,48 +3,72 @@
     "id": 1,
     "title": "Infant Care",
     "desc": "Expert care for newborns and infants by certified professional nannies.",
+    "fullDescription": "Our Infant Care service provides highly trained and background-verified nannies who specialize in newborn care. From feeding schedules to sleep training and sensory development, our caregivers ensure your baby is in safe and loving hands. We understand the delicacy of the first few months, which is why our staff undergoes rigorous medical and safety training.",
     "price": "500",
+    "date": "Available 24/7",
+    "priority": "High Priority",
     "icon": "Baby",
-    "image": "https://images.unsplash.com/photo-1612129727401-13b7676cf47e?q=80&w=1116&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "features": ["NID Verified Staff", "First Aid Certified", "Daily Activity Reports", "Emergency Backup"],
+    "image": "https://images.unsplash.com/photo-1612129727401-13b7676cf47e?q=80&w=1116"
   },
   {
     "id": 2,
     "title": "Elderly Companion",
     "desc": "Compassionate support and daily assistance for our beloved senior citizens.",
+    "fullDescription": "We provide companion care for seniors who want to maintain their independence at home. Our caregivers assist with medication reminders, light housekeeping, and most importantly, meaningful companionship to fight loneliness and ensure safety.",
     "price": "1200",
+    "date": "Weekly/Monthly",
+    "priority": "Medium Priority",
     "icon": "HeartPulse",
-    "image": "https://images.unsplash.com/photo-1644379911960-2d66cb3e4396?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    "features": ["Medication Tracking", "Doctor Visit Assistance", "Light Meal Prep", "Emotional Support"],
+    "image": "https://images.unsplash.com/photo-1644379911960-2d66cb3e4396?q=80&w=1332"
   },
   {
     "id": 3,
     "title": "Post-Surgery Care",
     "desc": "Specialized medical attention and assistance for faster recovery after surgery.",
+    "fullDescription": "Recovering from surgery requires professional attention. Our post-operative care team helps with wound dressing, monitoring vital signs, and ensuring the patient follows the doctor's recovery plan strictly to prevent complications.",
     "price": "2000",
+    "date": "Immediate Start",
+    "priority": "Urgent Service",
     "icon": "Activity",
+    "features": ["Wound Dressing", "Pain Management", "Vital Signs Monitoring", "Physiotherapy Support"],
     "image": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=600"
   },
   {
     "id": 4,
     "title": "Special Needs Care",
     "desc": "Dedicated and patient care for individuals with physical or mental disabilities.",
+    "fullDescription": "We provide specialized care for children and adults with Autism, Down Syndrome, or physical disabilities. Our caregivers are trained in patience and specialized communication techniques to provide a supportive environment.",
     "price": "1500",
+    "date": "Flexible Hours",
+    "priority": "High Priority",
     "icon": "Accessibility",
+    "features": ["Autism Support", "Mobility Assistance", "Therapy Support", "Behavioral Management"],
     "image": "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=600"
   },
   {
     "id": 5,
     "title": "Home Nursing",
     "desc": "Skilled nursing services provided at the comfort of your own home.",
+    "fullDescription": "Skip the hospital stay with our professional home nursing. From IV injections to catheter care and nebulization, our registered nurses bring the clinic to your bedroom with professional equipment and expertise.",
     "price": "2500",
+    "date": "Monthly Plan",
+    "priority": "High Priority",
     "icon": "Home",
+    "features": ["Registered Nurses", "IV/Injections", "Diagnostic Support", "Critical Care"],
     "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600"
   },
   {
     "id": 6,
     "title": "Child Daycare",
     "desc": "Educational and safe environment for children while parents are at work.",
+    "fullDescription": "Our daycare service isn't just about watching kids—it's about early education. We provide a structured environment with learning activities, healthy meals, and nap times, all monitored through CCTV for your peace of mind.",
     "price": "800",
+    "date": "Weekdays 9-6",
+    "priority": "Regular Service",
     "icon": "UserCheck",
+    "features": ["CCTV Access", "Educational Games", "Healthy Meals", "Safe Play Zone"],
     "image": "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600"
   }
 ]

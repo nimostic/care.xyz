@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Rahima Begum",
+    "speciality": "Infant Care Specialist",
+    "experience": "5 Years",
+    "rating": 4.9,
+    "reviews": 120,
+    "image": "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=400",
+    "verified": true,
+    "price": "500"
+  },
+  {
+    "id": 2,
+    "name": "Dr. Ariful Haque",
+    "speciality": "Elderly Care & Nurse",
+    "experience": "8 Years",
+    "rating": 4.8,
+    "reviews": 85,
+    "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400",
+    "verified": true,
+    "price": "800"
+  },
+  {
+    "id": 3,
+    "name": "Nusrat Jahan",
+    "speciality": "Post-Surgery Recovery",
+    "experience": "4 Years",
+    "rating": 4.7,
+    "reviews": 64,
+    "image": "https://images.unsplash.com/photo-1594824476967-48c8b964273f?q=80&w=400",
+    "verified": true,
+    "price": "1200"
+  },
+  {
+    "id": 4,
+    "name": "Sajid Ahmed",
+    "speciality": "Physical Physiotherapist",
+    "experience": "6 Years",
+    "rating": 4.9,
+    "reviews": 92,
+    "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=400",
+    "verified": false,
+    "price": "1500"
+  },
+  {
+    "id": 5,
+    "name": "Mariam Akter",
+    "speciality": "Child Education & Care",
+    "experience": "3 Years",
+    "rating": 4.6,
+    "reviews": 45,
+    "image": "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?q=80&w=400",
+    "verified": true,
+    "price": "600"
+  },
+  {
+    "id": 6,
+    "name": "Kamrul Islam",
+    "speciality": "Dementia Care Expert",
+    "experience": "10 Years",
+    "rating": 5.0,
+    "reviews": 150,
+    "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400",
+    "verified": true,
+    "price": "2000"
+  }
+]

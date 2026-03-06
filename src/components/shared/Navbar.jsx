@@ -33,7 +33,7 @@ export default function Navbar() {
             href="/"
             className="text-xl font-semibold text-gray-900 tracking-tight"
           >
-            Care<span className="text-blue-600">.xyz</span>
+            Care<span className="text-teal-600">.xyz</span>
           </Link>
 
           {/* Desktop Routes */}
@@ -42,7 +42,7 @@ export default function Navbar() {
               <Link
                 key={route.path}
                 href={route.path}
-                className="text-gray-600 hover:text-blue-600 text-sm font-medium transition"
+                className="text-gray-600 hover:text-teal-600 text-sm font-medium transition"
               >
                 {route.name}
               </Link>
@@ -56,14 +56,14 @@ export default function Navbar() {
               <>
                 <Link
                   href="/login"
-                  className="text-sm text-gray-600 hover:text-blue-600"
+                  className="text-sm text-gray-600 hover:text-teal-600"
                 >
                   Login
                 </Link>
 
                 <Link
                   href="/register"
-                  className="px-4 py-2 text-sm bg-blue-600 text-white rounded-md hover:bg-blue-700 transition"
+                  className="px-4 py-2 text-sm bg-teal-600 text-white rounded-md hover:bg-teal-700 transition"
                 >
                   Register
                 </Link>
@@ -77,7 +77,7 @@ export default function Navbar() {
                   onClick={() => setDropdown(!dropdown)}
                   className="flex items-center gap-2"
                 >
-                  <div className="w-9 h-9 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-semibold">
+                  <div className="w-9 h-9 rounded-full bg-teal-600 text-white flex items-center justify-center text-sm font-semibold">
                     {user.name[0]}
                   </div>
 
