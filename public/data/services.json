@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Infant Care",
+    "desc": "Expert care for newborns and infants by certified professional nannies.",
+    "price": "500",
+    "icon": "Baby",
+    "image": "https://images.unsplash.com/photo-1612129727401-13b7676cf47e?q=80&w=1116&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 2,
+    "title": "Elderly Companion",
+    "desc": "Compassionate support and daily assistance for our beloved senior citizens.",
+    "price": "1200",
+    "icon": "HeartPulse",
+    "image": "https://images.unsplash.com/photo-1644379911960-2d66cb3e4396?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    "id": 3,
+    "title": "Post-Surgery Care",
+    "desc": "Specialized medical attention and assistance for faster recovery after surgery.",
+    "price": "2000",
+    "icon": "Activity",
+    "image": "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?q=80&w=600"
+  },
+  {
+    "id": 4,
+    "title": "Special Needs Care",
+    "desc": "Dedicated and patient care for individuals with physical or mental disabilities.",
+    "price": "1500",
+    "icon": "Accessibility",
+    "image": "https://images.unsplash.com/photo-1516733725897-1aa73b87c8e8?q=80&w=600"
+  },
+  {
+    "id": 5,
+    "title": "Home Nursing",
+    "desc": "Skilled nursing services provided at the comfort of your own home.",
+    "price": "2500",
+    "icon": "Home",
+    "image": "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600"
+  },
+  {
+    "id": 6,
+    "title": "Child Daycare",
+    "desc": "Educational and safe environment for children while parents are at work.",
+    "price": "800",
+    "icon": "UserCheck",
+    "image": "https://images.unsplash.com/photo-1596464716127-f2a82984de30?q=80&w=600"
+  }
+]
