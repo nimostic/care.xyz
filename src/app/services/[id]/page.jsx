@@ -1,137 +1,140 @@
 "use client";
-
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect, use } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import Head from "next/head";
 import { motion } from "framer-motion";
-import { CheckCircle, Clock, DollarSign, ArrowLeft, Home, Activity, ShieldCheck, HeartPulse } from "lucide-react";
+import { ArrowLeft, Activity, Baby, HeartPulse, Accessibility, Home, UserCheck, ShieldCheck } from "lucide-react";
 import services from "../../../../public/data/services.json";
+import { useParams } from "next/navigation";
 
-const ServiceDetails = () => {
+// Icon map
+const iconMap = {
+  Baby: <Baby size={24} />,
+  HeartPulse: <HeartPulse size={24} />,
+  Activity: <Activity size={24} />,
+  Accessibility: <Accessibility size={24} />,
+  Home: <Home size={24} />,
+  UserCheck: <UserCheck size={24} />,
+};
+
+export default function ServiceDetails() {
+  
   const { id } = useParams();
 
   const service = services.find((s) => s.id === parseInt(id));
 
-  if (!service) {
+  if (!service)
     return (
-      <div className="flex justify-center items-center h-screen text-teal-600">
-        <p className="text-xl font-semibold animate-pulse">Loading Service Details...</p>
+      <div className="h-screen flex items-center justify-center flex-col gap-4">
+        <h2 className="text-2xl font-bold text-slate-800">Service Not Found</h2>
+        <Link href="/" className="px-6 py-2 bg-teal-600 text-white rounded-full">
+          Back to Home
+        </Link>
       </div>
     );
-  }
 
   return (
-    <div className=" bg-gray-50 px-4 sm:px-6 lg:px-8 py-10 md:py-20">
-      <div className="max-w-7xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden">
-        {/* Back Button */}
-        <div className="p-6">
+    <>
+      <Head>
+        <title>{service.title} | Care Services</title>
+      </Head>
+
+      <main className="min-h-screen bg-[#fcfdfe] pb-10">
+        {/* Banner */}
+        <div className="relative h-64 md:h-96 w-full bg-slate-200">
+          {service.image && (
+            <Image
+              src={service.image.startsWith("/") ? service.image : `${service.image}`}
+              alt={service.title}
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
+          )}
+          <div className="absolute inset-0 bg-black/40" />
           <Link
-            href="/services"
-            className="flex items-center text-teal-600 hover:text-teal-700 font-medium transition-colors"
+            href="/#services"
+            className="absolute top-6 left-4 md:left-10 z-20 flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-xl shadow-lg text-sm font-bold hover:bg-teal-600 hover:text-white transition-all"
           >
-            <ArrowLeft className="w-5 h-5 mr-2" />
-            Back to Services
+            <ArrowLeft size={16} /> Back
           </Link>
         </div>
 
-        <div className="flex flex-col md:flex-row">
-          {/* Image Section */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="md:w-1/2 p-6"
-          >
-            <div className="relative h-80 md:h-112.5 w-full rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src={service.image}
-                alt={service.title}
-                // layout="fill"
-                width={1600}
-                height={900}
-                
-                className="hover:scale-105 transition-transform duration-500 object-cover"
-              />
-              <div className="absolute top-4 left-4">
-                <span className="bg-teal-500 text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wider">
-                  {service.priority}
-                </span>
-              </div>
-            </div>
-          </motion.div>
+        {/* Content */}
+        <div className="max-w-7xl mx-auto px-4 -mt-24 md:-mt-32 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-          {/* Details Section */}
-          <motion.div 
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="md:w-1/2 p-8 flex flex-col justify-between"
-          >
-            <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-3 bg-teal-100 rounded-xl text-teal-600">
-                   <Home size={28} />
-                </div>
-                <h1 className="text-3xl font-extrabold text-gray-800 tracking-tight">
-                  {service.title}
-                </h1>
-              </div>
-
-              <p className="text-gray-600 text-lg mb-6 leading-relaxed">
-                {service.fullDescription}
-              </p>
-
-              {/* Info Grid */}
-              <div className="grid grid-cols-2 gap-4 mb-8">
-                <div className="flex items-center p-4 bg-teal-50 rounded-2xl border border-teal-100">
-                  <DollarSign className="text-teal-600 mr-2" size={20} />
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase font-bold tracking-wide">Price</p>
-                    <p className="font-bold text-teal-800">৳{service.price}</p>
+            {/* Left: Details */}
+            <motion.div
+              className="lg:col-span-2 space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+            >
+              <div className="bg-white p-6 md:p-10 rounded-3xl shadow-xl border border-slate-100">
+                <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+                  <div className="w-fit p-4 bg-teal-50 text-teal-600 rounded-2xl">
+                    {iconMap[service.icon] || <Activity size={24} />}
                   </div>
+                  <h1 className="text-2xl md:text-4xl font-black text-slate-900 leading-tight">{service.title}</h1>
                 </div>
-                <div className="flex items-center p-4 bg-teal-50 rounded-2xl border border-teal-100">
-                  <Clock className="text-teal-600 mr-2" size={20} />
-                  <div>
-                    <p className="text-xs text-gray-500 uppercase font-bold tracking-wide">Duration</p>
-                    <p className="font-bold text-teal-800">{service.date}</p>
-                  </div>
-                </div>
-              </div>
 
-              {/* Features List */}
-              <div className="mb-8">
-                <h3 className="text-lg font-bold text-gray-800 mb-4 flex items-center">
-                  <ShieldCheck className="mr-2 text-teal-600" /> Key Features
-                </h3>
+                <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8">{service.fullDescription || service.desc}</p>
+
+                <h3 className="font-bold text-slate-900 mb-4 text-lg">Key Features:</h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {service.features.map((feature, index) => (
-                    <div key={index} className="flex items-center text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-teal-500 mr-2 shrink-0" />
-                      <span className="font-medium">{feature}</span>
+                  {service.features?.map((f, i) => (
+                    <div key={i} className="flex items-center gap-3 text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm">
+                      <ShieldCheck size={20} className="text-teal-500 shrink-0" />
+                      <span className="text-sm font-semibold">{f}</span>
                     </div>
                   ))}
                 </div>
               </div>
-            </div>
-
-            {/* Action Button */}
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Link
-                href={`/booking/${service.id}`}
-                className="w-full bg-teal-600 hover:bg-teal-700 text-white py-4 rounded-2xl font-bold text-xl text-center shadow-lg shadow-teal-200 transition-all flex justify-center items-center gap-2"
-              >
-                <HeartPulse size={24} />
-                Confirm Booking
-              </Link>
             </motion.div>
-          </motion.div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
-export default ServiceDetails;
+            {/* Right: Pricing Card */}
+            <motion.div
+              className="lg:col-span-1"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-100 sticky top-6 flex flex-col justify-between">
+                <div>
+                  <h3 className="text-xl font-bold mb-6 border-b border-slate-200 pb-4">Order Summary</h3>
+
+                  <div className="space-y-5 mb-8">
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-400 font-medium">Service Price</span>
+                      <span className="text-2xl font-black text-teal-600">৳{service.price}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-400 font-medium">Availability</span>
+                      <span className="text-sm font-bold bg-slate-100 px-3 py-1 rounded-lg">{service.date}</span>
+                    </div>
+                    <div className="flex justify-between items-center">
+                      <span className="text-slate-400 font-medium">Service Level</span>
+                      <span className="text-xs bg-teal-500/20 text-teal-600 px-3 py-1.5 rounded-full font-bold uppercase tracking-wider">{service.priority}</span>
+                    </div>
+                  </div>
+                </div>
+
+                <Link
+                  href={`/booking/${service.id}`}
+                  className="w-full bg-teal-600 hover:bg-teal-500 text-white py-4 rounded-2xl font-black text-lg transition-all active:scale-95 shadow-lg shadow-teal-500/20 text-center mt-4"
+                >
+                  Confirm Booking
+                </Link>
+                <p className="text-center text-slate-500 text-xs mt-4">No hidden charges. Secure payment process.</p>
+              </div>
+            </motion.div>
+
+          </div>
+        </div>
+      </main>
+    </>
+  );
+}
