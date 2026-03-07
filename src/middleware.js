@@ -1,5 +1,20 @@
-export { default } from "next-auth/middleware";
+import { withAuth } from "next-auth/middleware";
+import { NextResponse } from "next/server";
 
-export const config = { 
-  matcher: ["/my-booking", "/booking/:path*", ] 
+export default withAuth(
+  function middleware(req) {
+    return NextResponse.next();
+  },
+  {
+    pages: {
+      signIn: "/login",
+    },
+  }
+);
+
+export const config = {
+  matcher: [
+    "/booking/:path*", 
+    "/my-booking/:path*", 
+  ],
 };
