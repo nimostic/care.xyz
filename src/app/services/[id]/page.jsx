@@ -4,7 +4,16 @@ import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
 import { motion } from "framer-motion";
-import { ArrowLeft, Activity, Baby, HeartPulse, Accessibility, Home, UserCheck, ShieldCheck } from "lucide-react";
+import {
+  ArrowLeft,
+  Activity,
+  Baby,
+  HeartPulse,
+  Accessibility,
+  Home,
+  UserCheck,
+  ShieldCheck,
+} from "lucide-react";
 import services from "../../../../public/data/services.json";
 import { useParams } from "next/navigation";
 
@@ -19,7 +28,6 @@ const iconMap = {
 };
 
 export default function ServiceDetails() {
-  
   const { id } = useParams();
 
   const service = services.find((s) => s.id === parseInt(id));
@@ -28,7 +36,10 @@ export default function ServiceDetails() {
     return (
       <div className="h-screen flex items-center justify-center flex-col gap-4">
         <h2 className="text-2xl font-bold text-slate-800">Service Not Found</h2>
-        <Link href="/" className="px-6 py-2 bg-teal-600 text-white rounded-full">
+        <Link
+          href="/"
+          className="px-6 py-2 bg-teal-600 text-white rounded-full"
+        >
           Back to Home
         </Link>
       </div>
@@ -45,7 +56,11 @@ export default function ServiceDetails() {
         <div className="relative h-64 md:h-96 w-full bg-slate-200">
           {service.image && (
             <Image
-              src={service.image.startsWith("/") ? service.image : `${service.image}`}
+              src={
+                service.image.startsWith("/")
+                  ? service.image
+                  : `${service.image}`
+              }
               alt={service.title}
               fill
               className="object-cover"
@@ -65,7 +80,6 @@ export default function ServiceDetails() {
         {/* Content */}
         <div className="max-w-7xl mx-auto px-4 -mt-24 md:-mt-32 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
             {/* Left: Details */}
             <motion.div
               className="lg:col-span-2 space-y-6"
@@ -78,16 +92,28 @@ export default function ServiceDetails() {
                   <div className="w-fit p-4 bg-teal-50 text-teal-600 rounded-2xl">
                     {iconMap[service.icon] || <Activity size={24} />}
                   </div>
-                  <h1 className="text-2xl md:text-4xl font-black text-slate-900 leading-tight">{service.title}</h1>
+                  <h1 className="text-2xl md:text-4xl font-black text-slate-900 leading-tight">
+                    {service.title}
+                  </h1>
                 </div>
 
-                <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8">{service.fullDescription || service.desc}</p>
+                <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8">
+                  {service.fullDescription || service.desc}
+                </p>
 
-                <h3 className="font-bold text-slate-900 mb-4 text-lg">Key Features:</h3>
+                <h3 className="font-bold text-slate-900 mb-4 text-lg">
+                  Key Features:
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   {service.features?.map((f, i) => (
-                    <div key={i} className="flex items-center gap-3 text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm">
-                      <ShieldCheck size={20} className="text-teal-500 shrink-0" />
+                    <div
+                      key={i}
+                      className="flex items-center gap-3 text-slate-700 bg-slate-50 p-4 rounded-xl border border-slate-100 shadow-sm"
+                    >
+                      <ShieldCheck
+                        size={20}
+                        className="text-teal-500 shrink-0"
+                      />
                       <span className="text-sm font-semibold">{f}</span>
                     </div>
                   ))}
@@ -104,20 +130,34 @@ export default function ServiceDetails() {
             >
               <div className="bg-white p-6 md:p-8 rounded-3xl shadow-xl border border-slate-100 sticky top-6 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl font-bold mb-6 border-b border-slate-200 pb-4">Order Summary</h3>
+                  <h3 className="text-xl font-bold mb-6 border-b border-slate-200 pb-4">
+                    Order Summary
+                  </h3>
 
                   <div className="space-y-5 mb-8">
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-400 font-medium">Service Price</span>
-                      <span className="text-2xl font-black text-teal-600">৳{service.price}</span>
+                      <span className="text-slate-400 font-medium">
+                        Service Price
+                      </span>
+                      <span className="text-2xl font-black text-teal-600">
+                        ৳{service.price}
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-400 font-medium">Availability</span>
-                      <span className="text-sm font-bold bg-slate-100 px-3 py-1 rounded-lg">{service.date}</span>
+                      <span className="text-slate-400 font-medium">
+                        Availability
+                      </span>
+                      <span className="text-sm font-bold bg-slate-100 px-3 py-1 rounded-lg">
+                        {service.date}
+                      </span>
                     </div>
                     <div className="flex justify-between items-center">
-                      <span className="text-slate-400 font-medium">Service Level</span>
-                      <span className="text-xs bg-teal-500/20 text-teal-600 px-3 py-1.5 rounded-full font-bold uppercase tracking-wider">{service.priority}</span>
+                      <span className="text-slate-400 font-medium">
+                        Service Level
+                      </span>
+                      <span className="text-xs bg-teal-500/20 text-teal-600 px-3 py-1.5 rounded-full font-bold uppercase tracking-wider">
+                        {service.priority}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -128,10 +168,11 @@ export default function ServiceDetails() {
                 >
                   Confirm Booking
                 </Link>
-                <p className="text-center text-slate-500 text-xs mt-4">No hidden charges. Secure payment process.</p>
+                <p className="text-center text-slate-500 text-xs mt-4">
+                  No hidden charges. Secure payment process.
+                </p>
               </div>
             </motion.div>
-
           </div>
         </div>
       </main>
