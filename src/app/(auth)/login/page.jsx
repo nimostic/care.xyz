@@ -29,7 +29,7 @@ export default function LoginPage() {
 
         {/* Google Login Button */}
         <button 
-          onClick={() => signIn("google", { callbackUrl: "/my-bookings" })}
+          onClick={() => signIn("google", { callbackUrl: "/my-booking" })}
           className="w-full flex items-center justify-center gap-3 bg-slate-50 hover:bg-slate-100 py-4 rounded-2xl font-bold text-slate-700 transition-all border border-slate-200 mb-6"
         >
           <Chrome size={20} className="text-teal-600" /> Login with Google
