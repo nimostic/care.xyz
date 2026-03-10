@@ -1,4 +1,3 @@
-// app/not-found.js
 import Link from "next/link";
 import { SearchX } from "lucide-react";
 
