@@ -15,7 +15,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "care.xyz",
+  title: {
+    default:"Care",
+    template:"%s | Care"
+  },
   description: "Baby Sitting & Elderly Care Service Platform",
 };
 

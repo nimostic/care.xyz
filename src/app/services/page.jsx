@@ -1,8 +1,14 @@
+import { getServices } from "@/actions/server/service";
 import ServiceCard from "@/components/card/ServiceCard";
-import services from "../../../public/data/services.json";
+// import services from "@/data/services.json";
+export const metadata = {
+  title: "Services",
+  description: "Baby Sitting & Elderly Care Service Platform",
+};
 
-
-export default function ServicesPage() {
+const ServicesPage = async ()=> {
+  const services = await getServices()
+  console.log(services)
   return (
     <main className="min-h-screen bg-slate-50 py-24">
       <div className="max-w-7xl mx-auto px-6">
@@ -36,3 +42,5 @@ export default function ServicesPage() {
     </main>
   );
 }
+
+export default ServicesPage
