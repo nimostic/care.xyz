@@ -1,11 +1,14 @@
 export const metadata = {
-  title: "Pricing",
-  description: "Baby Sitting & Elderly Care Service Platform",
+  title: "Service Pricing",
+  description:
+    "View transparent pricing for home healthcare services including infant care, elderly support, and nursing assistance.",
+  openGraph: {
+    images: ["/og/pricing.png"],
+  },
 };
-import React from 'react';
 
-const layout = ({children}) => {
-    return children
+const layout = ({ children }) => {
+  return children;
 };
 
 export default layout;
