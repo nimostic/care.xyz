@@ -2,7 +2,7 @@
 import { useState, useMemo } from "react";
 import { Search } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import caregivers from "../../../public/data/caregivers.json";
+import caregivers from "@/data/caregivers.json";
 import CaregiverCard from "@/components/card/CaregiverCard";
 
 export default function CaregiversPage() {

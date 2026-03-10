@@ -10,7 +10,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import AnimatedCounter from "./AnimatedCounter";
-import services from "../../../public/data/services.json";
+import services from "@/data/services.json";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-slate-50 pt-12 pb-20 lg:pt-24 lg:pb-32">
