@@ -13,7 +13,7 @@ export default function LoginPage() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const callback = searchParams.get("callbackUrl") || "/";
-
+    console.log(callback)
   const handleSubmit = async (e) => {
     e.preventDefault();
     const email = e.target.email.value;
@@ -32,6 +32,7 @@ export default function LoginPage() {
 
     if (result?.ok) {
       toast.success("Login successful!");
+      console.log(callback)
       router.push(callback);
     }
   };

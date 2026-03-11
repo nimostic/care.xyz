@@ -1,18 +1,19 @@
 "use client";
 import { useSession } from "next-auth/react";
-import { usePathname, useRouter } from "next/navigation";
+import { useParams, usePathname, useRouter } from "next/navigation";
 
 const BookingButton = ({ serviceId }) => {
   const router = useRouter();
   const { data: session, status } = useSession();
   const path = usePathname();
-
+  const params = useParams()
+  console.log(params)
   const handleClick = () => {
     if (status === "loading") return; 
     if (session) {
       router.push(`/booking/${serviceId}`);
     } else {
-      router.push(`/login?callbackUrl=${path}`);
+      router.push(`/login?callbackUrl=/booking/${serviceId}`);
     }
   };
 
