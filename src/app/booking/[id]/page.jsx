@@ -127,7 +127,7 @@ export default function BookingForm() {
               type="submit"
               className="w-full bg-teal-600 hover:bg-teal-700 text-white py-3 rounded-xl font-semibold transition"
             >
-              Confirm Booking
+              Book Service
             </button>
           </form>
         </div>

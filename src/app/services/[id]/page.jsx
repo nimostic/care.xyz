@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { getSingleService } from "@/actions/server/service";
 import MotionDiv from "@/components/motion/MotionDiv";
+import BookingButton from "@/components/Buttons/BookingButton";
 
 const iconMap = {
   Baby: <Baby size={24} />,
@@ -113,12 +114,7 @@ const ServiceDetails = async ({ params }) => {
                 </div>
               </div>
 
-              <Link
-                href={`/booking/${service._id}`}
-                className="w-full bg-teal-600 hover:bg-teal-500 text-white py-4 rounded-2xl font-black text-lg transition-all active:scale-95 shadow-lg shadow-teal-500/20 text-center block mt-4"
-              >
-                Confirm Booking
-              </Link>
+              <BookingButton serviceId={service._id}></BookingButton>
               <p className="text-center text-slate-500 text-xs mt-4">
                 No hidden charges. Secure payment process.
               </p>
