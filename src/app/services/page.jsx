@@ -12,7 +12,7 @@ export const metadata = {
 
 const ServicesPage = async () => {
   const services = await getServices();
-  console.log(services);
+  // console.log(services);
   return (
     <main className="min-h-screen bg-slate-50 py-24">
       <div className="max-w-7xl mx-auto px-6">

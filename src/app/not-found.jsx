@@ -5,7 +5,6 @@ export default function NotFound() {
   return (
     <main className="min-h-screen bg-[#fcfdfe] flex items-center justify-center px-6">
       <div className="text-center max-w-md">
-
         {/* Icon */}
         <div className="w-24 h-24 bg-teal-50 rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-sm border border-teal-100">
           <SearchX size={44} className="text-teal-600" />
@@ -39,7 +38,6 @@ export default function NotFound() {
             View Services
           </Link>
         </div>
-
       </div>
     </main>
   );
