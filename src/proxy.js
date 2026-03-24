@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 const privateRoute = ["/booking", "/my-booking"];
 export async function proxy(req) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
+  console.log(token);
   const isAuthenticated = Boolean(token);
   const reqPath = req.nextUrl.pathname;
   const isPrivateReq = privateRoute.some((route) => reqPath.startsWith(route));
