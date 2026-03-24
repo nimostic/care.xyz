@@ -6,7 +6,7 @@ export async function proxy(req) {
   const isAuthenticated = Boolean(token);
   const reqPath = req.nextUrl.pathname;
   const isPrivateReq = privateRoute.some((route) => reqPath.startsWith(route));
-  // console.log({ isPrivateReq, isAuthenticated });
+  console.log({ isPrivateReq, isAuthenticated });
   if (!isAuthenticated && isPrivateReq) {
     return NextResponse.redirect(
       new URL(`/login?callbackUrl=${reqPath}`, req.url),
